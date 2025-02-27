@@ -1,0 +1,19 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+<h2>Detalles del Cliente</h2>
+
+<p><strong>N° Socio:</strong> {{ customer.id_socio }}</p>
+<p><strong>Nombre:</strong> {{ customer.first_name }} {{ customer.last_name }}</p>
+<p><strong>DNI:</strong> {{ customer.dni }}</p>
+<p><strong>Fecha de Nacimiento:</strong> {{ customer.date_of_birth }}</p>
+<p><strong>Dirección:</strong> {{ customer.address }}</p>
+<p><strong>Teléfono:</strong> {{ customer.phone }}</p>
+<p><strong>Ocupación:</strong> {{ customer.occupation }}</p>
+<p><strong>Grupo Sanguíneo:</strong> {{ customer.blood_group }}</p>
+<p><strong>Observaciones:</strong> {{ customer.observations }}</p>
+
+<a href="{% url 'customer_list' %}" class="btn btn-primary">Volver</a>
+<a href="{% url 'customer_update' customer.id %}" class="btn btn-warning">Editar</a>
+<a href="{% url 'customer_delete' customer.id %}" class="btn btn-danger">Eliminar</a>
+{% endblock %}

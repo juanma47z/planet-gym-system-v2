@@ -1,0 +1,17 @@
+{% extends 'web/base.html' %}
+
+{% block title %} Planet Gym {% endblock %}
+
+{% block content %}
+
+<div class="col-md-6 offset-md-3">
+    {% if user.is_authenticated %}
+    <h1>Bievenido a Planet Gym {{ request.user.username }}</h1>
+    {% else %}
+    <h1>Bievenido a Planet Gym nada</h1>  
+    {% endif %}
+</div>
+
+<h1>Bievenido a Planet Gym</h1>
+
+{% endblock %}

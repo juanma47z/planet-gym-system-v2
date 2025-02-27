@@ -1,0 +1,29 @@
+{% extends 'web/base.html' %}
+
+{% block title %} Acceder {% endblock %}
+{% block content %}
+
+<div class="col-md-6 offset-md-3">
+  <h1>Acceder</h1>
+<br>
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+
+  <form>
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Constaseña</label>
+          <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+
+        <button type="submit" class="btn btn-secondary">Acceder</button>
+
+      </form>
+</form>
+</div>
+
+{% endblock %}
